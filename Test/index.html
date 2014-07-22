@@ -1,28 +1,36 @@
 <!DOCTYPE html>
+<!-- Aqui indicamos con ng-app que se usara una aplicación angularjs en el documento-->
 <html lang="es" ng-app>
 <head>
 	<meta charset="UTF-8">
+	<!---->
+
 	<meta name="viewport" content="width=device-width, user-scalable=yes maximum-scale=1">
+	<!--Agrgamos todos los modulos necesarios para el funcionamiento de la pagina-->
 	<script src="app/jquery-2.1.1.min.js"></script>
 	 <script src="app/angular-1.2.20/angular.js"></script>
 	 <script src="app/Controller/cliente.js"></script>
-	 <link rel="stylesheet" href="app/css/bootstrap.css"/>
+	 <link rel="stylesheet" href="app/css/bootstrap.css"/><!--Usamos estilos de Bootstrap para algunos elementos-->
 	  <link rel="stylesheet" href="app/css/estilos.css"/>
-	<title>..:::Test:::..</title>
+	<title>..:::Test Front-end:::..</title>
 </head>
+<!--Aqui Agregamos nuestro controlador TestControler que Se encuentra declarado en nuestro archivo cliente.js-->
 <body  ng-controller="TestController">
 		<section id="contenedor">
 			<header>
 				<h1 id="encabezado">Test Desarrollador Front-end SocialH4ck</h1>
 			</header>
-
+				<!--Este section es el contenido que se visualiza al entra en la pagina-->
 			<section id="panel-primary" class="panel">
-				<div class="panel-heading">
+				<!--Inicio del panel Principal donde se listaran los clientes-->
+				<div class="panel-heading"><!--Cabecera donde se encuentra el input de buscar-->
 					<div class="input-group">
 						<input ng-model="buscar.name" type="text" class="form-control" placeholder="Buscar por Nombre" >
 					</div>
-				</div>		
-				<div id="panel-body" class="panel-body ">
+				</div>	
+
+				<div id="panel-body" class="panel-body "><!--Cuerpo del panel donde ubicamos la tabla
+					correspondiente a los clientes.-->
 					<table class="table table-bordered table-hover	">
 						<thead>
 							<tr>
@@ -46,17 +54,21 @@
 							</tr>
 						</tbody>
 					</table>					
-				</div>				
-			</section>
-			<section id="panel2">
+				</div>	<!--Fin del panel donde se listan los clientes-->
 
+			</section>
+<!--Panel 2 donde se desplegara la informacion que solicite el usuario-->
+			<section id="panel2">
+				<!--Panel #friends donde se visualizan los amigos del Cliente seleccionado en la lista anterior "Por default no es visible"-->
 				<section ng-show="friends" id="friends">
 					<h4>Amigos de {{Cliente[idDetalle].name}} </h4><button style="float:right; margin-right:2%" class="btn btn-default btn-xs" ng-click="cerrarAmigos();">X</button>
 					<p class="friend" ng-repeat="friend in Cliente[idDetalle].friends">{{friend.name}}</p>				
 				</section >
 
 
-						<button ng-show="mostrarD" id="botdet" style=" margin:.4% .4%" class="btn btn-default btn-xs" ng-click="cerrardetalle();">X</button>
+				<!--boton para cerrar ventana de detalles si esta abierta--><button ng-show="mostrarD" id="botdet" style=" margin:.4% .4%" class="btn btn-default btn-xs" ng-click="cerrardetalle();">X</button>
+
+				<!--Seccion donde se muesran los detalles completos de cada cliente selecionado en la lista de Cliente "Por default no es visible"-->
 				<section ng-show="mostrarD" id="detalles">
 						<div class="detdiv">
 							<img id="avatar" src="app/images.jpg" alt="Avatar" class="img-rounded">
@@ -89,7 +101,7 @@
 			
 		</section>
 		<footer>
-							
-			</footer>
+				Creado por: <strong>Johan Paez </strong><small> 22/07/2014</small>			
+		</footer>
 </body >
 </html>

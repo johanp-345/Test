@@ -1,4 +1,6 @@
 function TestController($scope) {
+    //Variable creada para guardar el contenido 
+    //de un archivo .JSON
     $scope.Cliente=[
     {
         "detalle":false,
@@ -232,9 +234,18 @@ function TestController($scope) {
         "favoriteFruit": "banana"
     }
 ];
-$scope.friends=false;
-$scope.idDetalle;
 
+//***********************************************
+//***********************************************
+
+$scope.friends=false; /*variable para validar si 
+se muestra o no los amigos del cliente seleccionado*/
+
+$scope.idDetalle;/*variable para guardar el id
+cliente del que queremos ver los amigos*/
+
+/*Funcion para cambiar en estado del DIV y el id
+cliente del que queremos ver los amigos*/
 $scope.verAmigos=function(id){
     if($scope.friends==false) {
         $scope.friends=true;
@@ -254,16 +265,21 @@ $scope.verAmigos=function(id){
 
 $scope.cerrarAmigos=function(){
     $scope.friends=false;
-}
+}/*funcion para el boton Cerrar amigos*/
 
 $scope.cerrardetalle=function(){
     $scope.mostrarD=false;
-}
+}/*funcion para el boton cerrar detalle*/
 
 
-$scope.mostrarD=false;
-$scope.detalleC;
+$scope.mostrarD=false;/*Variable para validar si se 
+muestra o no el detalle del Cliente seleccionado en el DIV*/
 
+$scope.detalleC;/*variable para sabe la id Cliente
+Del que se vera el detalle*/
+
+
+/*funcion para cambiar el estado del Div*/
 $scope.verDetalle=function(id){
     if($scope.mostrarD==false) {
         $scope.mostrarD=true;

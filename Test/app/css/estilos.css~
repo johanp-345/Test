@@ -1,28 +1,26 @@
 footer{
-	background: #fff;
-	border-top: 2px solid #36D4D4;;
-	bottom:0;
-	height:2em;
 	margin: 1em auto; 
-	position: relative;
-	text-align: center;
-	text-shadow:2px 2px 3px #000;
 	width: 60%;
+	height:2em;
+	bottom:0;
+	background: #ccc;
+	border-top: 2px solid #bbb;
+	position: relative;
 }
+
 header{
-	background: #36D4D4;	
 	box-shadow: 0px 0px 8px #000;
+	background: #36D4D4;	
 	margin-top: 4.5%;
-	overflow: hidden;
+	
 	padding-left: 4%;	
 	width: 100%;
 }
 
-/*******[IDS]*********************************************/
 #avatar{
+	width: 85%;
 	border:1px solid #36D4D4;
 	margin:1em 1em;
-	width: 85%;
 }
 
 #botdet{
@@ -30,35 +28,35 @@ header{
 }
 
 #contenedor{
-		-moz-box-shadow: 0px 0px 8px #000;
+	min-width: 70%;
+	box-shadow: 0px 0px 8px #000;
 		-webkit-box-shadow: 0px 0px 8px #000;
+		-moz-box-shadow: 0px 0px 8px #000;
 	background: #eee;
 	border-radius: .5em;
-	box-shadow: 0px 0px 8px #000;
 	margin:2em auto;
-	min-height: 50em;
-	min-width: 70%;
-	overflow: hidden;
-	padding: 0 0 4em 0;
 	width:70%;
+	min-height: 50em;
+	padding: 0 0 4em 0;
+	overflow: hidden;
 }
 
 #detalles{
-	background: #fff;
-	border-radius: 5px;
-	border:1px solid #ccc;
 	box-shadow:0px 0px 8px #000 ;
-	height: 30em;
 	overflow: auto;
 	padding-left: 1%;
 	width:100%;
+	height: 30em;
+	background: #fff;
+	border:1px solid #ccc;
+	border-radius: 5px;
 }
 
 #encabezado{
-		-moz-text-shadow:1px 1px 2px #000;
-		-webkit-text-shadow:1px 1px 2px #000;
 	color:#fff;
 	text-shadow:1px 1px 2px #000;
+		-webkit-text-shadow:1px 1px 2px #000;
+		-moz-text-shadow:1px 1px 2px #000;
 }
 
 .friend{
@@ -68,26 +66,26 @@ header{
 }
 
 #friends{
-	background: #fff;
-	border-radius: 5px;
-	border:1px solid #ccc;
 	box-shadow: 0px 0px 8px #000;
-	display: table;
 	padding-left: 1%;
+	display: table;
 	width:100%;
+	background: #fff;
+	border:1px solid #ccc;
+	border-radius: 5px;
 }
 
 #greeting{
-	color: #AE0404;
-	display: inline-block;
 	text-align: center;
+	display: inline-block;
 	width: 100%;
+	color: #AE0404;
 }
 
 #mapa{
-	border-radius: 5px;
-	border:1px solid #36D4D4;
 	margin:.0em .5em;
+	border:1px solid #36D4D4;
+	border-radius: 5px;
 }
 
 #panel2{
@@ -97,23 +95,21 @@ header{
 }	
 
 #panel-body{
+	overflow: auto;
 	background: #fff;
 	height: 100%;
-	overflow: auto;
 	padding-bottom:0;
 
 }
 
 #panel-primary{
+	width: 85%;	
 	background: #36D4D4;
 	box-shadow: 0px 0px 8px #000;
 	margin: 4% 0em 1.5% 8%;
-	overflow: auto;
 	padding: 0;
-	width: 85%;	
+	overflow: auto;
 }
-
-/****[Class]************************************************/
 
 .btn{
 	background:#36D4D4;
@@ -121,11 +117,11 @@ header{
 
 .detalle{
 	
-	border-radius: 5px;
-	border:1px solid #36D4D4;
 	display:block;
-	margin:.1em .5em;
 	padding:.5%;
+	margin:.1em .5em;
+	border:1px solid #36D4D4;
+	border-radius: 5px;
 }
 
 .detalle:hover{
@@ -134,13 +130,13 @@ header{
 }
 
 .detalledir{
-	border-radius: 5px;
-	border:1px solid #36D4D4;
 	display: block;
 	height: 4.5em;
-	margin:.1em .5em;
-	overflow: auto;
 	padding:.5%;
+	margin:.1em .5em;
+	border:1px solid #36D4D4;
+	border-radius: 5px;
+	overflow: auto;
 }
 .detdiv{
 	display: inline-block;
@@ -149,13 +145,12 @@ header{
 
 .detdiv2{
 	display: inline-block;
-	margin-top:.5em;
 	vertical-align:top;
+	margin-top:.5em;
 	width:38%;
 
 }
 
-/*******[Pantallas inferiores a 800px]*********************************************/
 
 @media screen and (max-width: 800px){
 
