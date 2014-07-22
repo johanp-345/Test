@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes maximum-scale=1">
+	<script src="app/jquery-2.1.1.min.js"></script>
+	 <script src="app/angular-1.2.20/angular.js"></script>
+	 <script src="app/Controller/cliente.js"></script>
+	 <link rel="stylesheet" href="app/css/bootstrap.css"/>
+	  <link rel="stylesheet" href="app/css/estilos.css"/>
+	<title>..:::Test:::..</title>
+</head>
+<body  ng-controller="TestController">
+		<section id="contenedor">
+			<header>
+				<h1 id="encabezado">Test Desarrollador Front-end SocialH4ck</h1>
+			</header>
+
+			<section id="panel-primary" class="panel">
+				<div class="panel-heading">
+					<div class="input-group">
+						<input ng-model="buscar.name" type="text" class="form-control" placeholder="Buscar por Nombre" >
+					</div>
+				</div>		
+				<div id="panel-body" class="panel-body ">
+					<table class="table table-bordered table-hover	">
+						<thead>
+							<tr>
+								<th>Nombre</th>
+								<th>Telefono</th>
+								<th>Email</th>
+								<th>Activo</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="Cliente in Cliente | filter:buscar">
+								<th>{{Cliente.name}}</th>
+								<th>{{Cliente.phone}}</th>
+								<th>{{Cliente.email}}</th>
+								<th><input id="checkboxEnLinea1" type="checkbox" ng-model="Cliente.isActive" DISABLED></th>
+								<th><button class="btn btn-primary btn-xs" type="button" ng-click="verDetalle(Cliente.id);">Ver detalle</button>
+								</th>
+								<th><button  class="btn btn-primary btn-xs boton" type="button" ng-click="verAmigos(Cliente.id);">Ver amigos</button>
+								</th>
+
+							</tr>
+						</tbody>
+					</table>					
+				</div>				
+			</section>
+			<section id="panel2">
+
+				<section ng-show="friends" id="friends">
+					<h4>Amigos de {{Cliente[idDetalle].name}} </h4><button style="float:right; margin-right:2%" class="btn btn-default btn-xs" ng-click="cerrarAmigos();">X</button>
+					<p class="friend" ng-repeat="friend in Cliente[idDetalle].friends">{{friend.name}}</p>				
+				</section >
+
+
+						<button ng-show="mostrarD" id="botdet" style=" margin:.4% .4%" class="btn btn-default btn-xs" ng-click="cerrardetalle();">X</button>
+				<section ng-show="mostrarD" id="detalles">
+						<div class="detdiv">
+							<img id="avatar" src="app/images.jpg" alt="Avatar" class="img-rounded">
+							<div class="detalle"><strong>Nombre:</strong> {{Cliente[detalleC].name}} </div>
+							<div class="detalle"><strong>Activo</strong><input style="margin:.3em 1em" id="checkboxEnLinea1" type="checkbox" ng-model="Cliente[detalleC].isActive" DISABLED></div>
+						</div>	
+						<div class="detdiv">
+							<div class="detalle"><strong>Telefono:</strong> {{Cliente[detalleC].phone}} </div>
+							<div class="detalle"><strong>Compañia: </strong>{{Cliente[detalleC].company}} </div>
+							<div class="detalle"><strong>Genero: </strong>{{Cliente[detalleC].gender}} </div>
+							<div class="detalle"><strong>Balance:</strong> {{Cliente[detalleC].balance}} </div>
+							<div class="detalle"><strong>Edad:</strong> {{Cliente[detalleC].age}} </div>
+							<div class="detalle"><strong>Color de Ojos:</strong> {{Cliente[detalleC].eyeColor}} </div>		
+							<div class="detalledir"><strong>Direccion:</strong> {{Cliente[detalleC].address}} </div>	
+						</div>
+						<div class="detdiv2">
+							<div class="detalle"><strong>Guia:</strong> {{Cliente[detalleC].guid}} </div>
+							<p style="text-align:center">Ubicacion</p>
+							<img id="mapa" src="http://maps.google.com/maps/api/staticmap?center={{Cliente[detalleC].latitude}},{{Cliente[detalleC].longitude}}&amp;zoom=15&amp;size=300x150&amp;markers=color:green|label:A|{{Cliente[detalleC].latitude}},{{Cliente[detalleC].longitude}}&amp;sensor=false">						
+						</div>		
+						<div class="detdiv" id="greeting">{{Cliente[detalleC].greeting}}</div>
+						<div style="width:90%">
+							<div class="detalledir" style="height:8em"><strong>Informacion Adicional:</strong><br><strong>Fruta Favorita:</strong>{{Cliente[detalleC].favoriteFruit}} <br> {{Cliente[detalleC].about}} </div>
+							<div><small>Registrado {{Cliente[detalleC].registered }} </small></div>
+						</div>	
+						
+				</section>
+				
+			</section>	
+			
+		</section>
+		<footer>
+							
+			</footer>
+</body >
+</html>
